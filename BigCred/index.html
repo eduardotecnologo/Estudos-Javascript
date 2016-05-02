@@ -1,0 +1,20 @@
+<html ng-app="ListaContatos">
+   <head>
+      <title> Lista de Contatos</title>
+        <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="lib/css/style.css">
+
+        <script src="lib/angular/angular.js"></script>
+        <script>
+             angular.module("ListaContatos", []);
+             angular.module("ListaContatos").controller("ListaContatosCtrl", function ($scope) {
+                $scope.app = "Lista de Contatos";
+             });
+        </script>
+   </head>
+   <body ng-controller="ListaContatosCtrl">
+     <div class="jumbotron">
+       <h4 ng-bind="app"></h4>
+     </div>
+   </body>
+</html>

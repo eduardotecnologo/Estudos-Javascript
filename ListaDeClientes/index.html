@@ -1,0 +1,47 @@
+<html ng-app="ListaContatos">
+   <head>
+      <title> Lista de Contatos com AngularJS</title>
+        <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="lib/css/style.css">
+        <meta charset="UTF-8">
+        <meta name="description" content="Sistema de cadastro de Clientes">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+        <meta name="author" content="Eduardo Alexandre">
+
+        <script src="lib/angular/angular.js"></script>
+        <script>
+             angular.module("ListaContatos", []);
+             angular.module("ListaContatos").controller("ListaContatosCtrl", function ($scope) {
+                $scope.app = "Lista de Contatos com AngularJS";
+                $scope.contatos = [
+                  {nome: "Lohann", telefone: "1111-1111", bairro: "Ciadde do Sol", produto: "Desktop", modelo: "AcerAspire", data: "01/05/15", servico: "Formatação"},
+                  {nome: "Lucas", telefone: "2222-2222", bairro: "Cidade do Sol", produto: "Tablet", modelo: "Sansung", data:"01/05/15", servico: "Formatação"},
+                  {nome: "Eduardo", telefone: "8702-4149", bairro: "Cidade do Sol", produto: "Celular", modelo: "iPhone", data:"01/05/15", servico: "Formatação"}
+                ];
+             });
+        </script>
+   </head>
+   <body ng-controller="ListaContatosCtrl">
+     <div class="jumbotron">
+       <h2 ng-bind="app"></h2>
+       <table class="table">
+           <tr>
+              <th>Nome</th>
+              <th>Telefone</th>
+              <th>Bairro</th>
+              <th>Produto</th>
+              <th>Data</th>
+              <th>Serviço</th>
+           </tr>
+           <tr ng-repeat="contato in contatos">
+           <td>{{contato.nome}}</td>
+           <td>{{contato.telefone}}</td>
+           <td>{{contato.bairro}}</td>
+           <td>{{contato.produto}}</td>
+           <td>{{contato.data}}</td>
+           <td>{{contato.servico}}</td>
+           </tr>
+       </table>
+     </div>
+   </body>
+</html>
