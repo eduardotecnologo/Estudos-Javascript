@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>Angular 2 QuickStart</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 1. Load libraries -->
+  <!-- Polyfill(s) for older browsers -->
+  <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+  <script src="node_modules/rxjs/bundles/Rx.js"></script>
+  <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+  <script src="node_modules/es6-shim/es6-shim.js"></script><!-- Para navegadores sem suporte so ES6 -->
+  
+  <!-- 2. Configure SystemJS || Respomssável em carregar os arquivos js assincona-->
+  <script>
+    System.config({
+      packages: {
+        app: {
+          format: 'register',
+          defaultExtension: 'js'
+        }
+      }
+    });
+    System.import('app/boot').then(null, console.error.bind(console));
+  </script>
+</head>
+<!-- 3. Display the application -->
+<body>
+  <meu-app>Loading...</meu-app>
+</body>
+</html>
