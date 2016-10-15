@@ -11,19 +11,32 @@
   		margin: 0 auto;
   	}
   </style>
+<!-- Menu Superior -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">one</a></li>
+  <li><a href="#!">two</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">three</a></li>
+</ul>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">Eduardo Alexandre</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- Fim -- Menu Superior -->
 </head>
+
 <body data-ng-controller="UserController as User">
 
+     
 <section class="row wrapper">
-
+<h2>Cadastros de Clientes</h2>
 <!--Form Cadastros de clientes-->
-    <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col s12">
-                <h5 class="white-text">Cadastros de Clientes</h5>
-                <p class="grey-text text-lighten-4">Sistema de cadastro com AngularJS e Materialize.</p>
-              </div>
 <p class="col s12">
 	<label>
 		<input type="text" data-ng-model="User.form.name" placeholder="Digite o Nome">
@@ -32,13 +45,19 @@
 	<label>
 		<input type="email" data-ng-model="User.form.email" placeholder="Digite o email">
 	</label>
+	<label>
+		<input type="text" data-ng-model="User.form.telefone" placeholder="Digite o telefone">
+	</label>
+	<label>
+		<input type="text" data-ng-model="User.form.bairro" placeholder="Digite o bairro">
+	</label>
 </p>
 <!--Fim -- Form Cadastros de clientes-->
 
 <!--Botão de adicionar e salvarclientes-->
-<button data-ng-click="User.add(form.User)" class="btn btn-large orange waves-effect waves-light col s6" type="submit" name="action">Adicionar Clientes
+<button data-ng-click="User.add(User.form)" class="btn btn-large orange waves-effect waves-light col s6" type="submit" name="action">Adicionar Clientes
 </button>
-<button data-ng-click="User.add(form.User)" class="btn btn-large green waves-effect waves-light col s6" type="submit" name="action">Salvar Clientes
+<button data-ng-click="User.save(User.form)" class="btn btn-large green waves-effect waves-light col s6" type="submit" name="action">Salvar Clientes
 </button>
 <!--Fim -- Botão de remover clientes-->
 
@@ -47,7 +66,7 @@
 	<table>
 		<thead>
 			<tr>
-				<th colspan="{{ User.keysLenght + 1 }}">
+				<th colspan="5">
 					<label>
 						<input ng-model="searchUser" placeholder="Buscar Usuários">
 					</label>
@@ -57,10 +76,13 @@
 			<th>Selecionar</th>
 				<th>Name</th>
 				<th>E-mail</th>
+				<th>Telefone</th>
+				<th>Bairro</th>
+				<th>Serviço</th>
 			</tr>
 		</thead>
 			<tbody>
-				<tr data-ng-repeat="user in User.users | orderBy:predicate:reverse | filter:searchUser">
+				<tr data-ng-repeat="user in User.users | filter:searchUser">
 		
 			<td>
 			<input type="checkbox" id="user-{{$index}}" ng-model="user.selecionado" />
@@ -69,6 +91,8 @@
 
 			<td>{{ user.name }}</td>
 			<td>{{ user.email }}</td>
+			<td>{{ user.telefone }}</td>
+			<td>{{ user.bairro }}</td>
 			<td>
 				<button data-ng-click="User.edit(user, $index)" class="btn btn-large light-blue waves-effect waves-light col s12" type="submit" name="action">Editar
 				</button>
@@ -84,6 +108,7 @@
 	</section>	
 
 	<script src="js/angular.min.js"></script>
+	<script src="js/style.js"></script>
 	<script>
 		angular.module('ctk', [])
 		.controller('UserController', UserController);
@@ -92,9 +117,9 @@
 				var vm = this;
 				vm.titulo = "Cadastros";
 				vm.users = [
-					{name: 'Eduardo', email: 'eduardo@eduardo.com'},
-					{name: 'Alexandre', email: 'alexandre@alexandre.com'},
-					{name: 'Lucio', email: 'lucio@lucio.com'}
+					{name: 'Eduardo', email: 'eduardo@eduardo.com', telefone:'1111-1111', bairro:'bairro1'},
+					{name: 'Alexandre', email: 'alexandre@alexandre.com', telefone:'2222-2222', bairro:'bairro2'},
+					{name: 'Lucio', email: 'lucio@lucio.com', telefone:'3333-3333', bairro:'bairro3'}
 				];
 				function getKeylength(){
 					return Object.keys(angular.copy(vm.users[0])).length;
@@ -132,12 +157,47 @@
 
 //Função VM Save clientes
 				vm.save = save;
-			function save(user, index) {
-				vm.form = angular.copy(user);
-				vm.form.index = index;
+			function save(user) {
+				var users = vm.users.map(function(el, i){
+					if (i === user.index) {
+						delete user.index;
+						return user;
+					}
+					return el;
+				});
+				vm.users = users;
 				}
 //Fim -- Função VM Save clientes
 			}
 	</script>
+
+<!--Footer-->
+	 <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Eduardo Alexandre</h5>
+               <p>Analista e Desenvolvedor de Sistemas.</p>  
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Blog</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Segurança</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Hacker</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Mobile</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Web</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Desktop</a></li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+	     <div class="footer-copyright">
+            <div class="container">
+            © 2016 Copyright Eduardo Alexandre
+            <a class="grey-text text-lighten-4 right" href="#!">Ctk Soluções em T.I</a>
+            </div>
+          </div>
+        </footer>
 </body>
 </html>
