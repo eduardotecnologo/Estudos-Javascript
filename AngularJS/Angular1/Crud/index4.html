@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="ctk">
+<head>
+	<meta charset="UTF-8">
+	<title>Cadastros</title>
+	<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <style>
+  	.wrapper{
+  		max-width: 300px;
+  		margin: 0 auto;
+  	}
+  </style>
+</head>
+<body data-ng-controller="UserController as User">
+
+<section class="row wrapper">
+<h1>Cadastros</h1>
+<p class="col s12">
+	<label>
+		<input type="text" data-ng-model="form.User.name" placeholder="Digite o Nome">
+	</label>
+	<br>
+	<label>
+		<input type="email" data-ng-model="form.User.email" placeholder="Digite o email">
+	</label>
+</p>
+
+<!--Botão de adicionar clientes-->
+<button data-ng-click="User.add(form.User)" class="btn btn-large green waves-effect waves-light col s12" type="submit" name="action">Adicionar Clientes</button>
+<!--Fim -- Botão de remover clientes-->
+
+<span data-ng-init="predicate = 'name' "></span>
+
+	<table>
+		<thead>
+			<tr>
+				<th colspan="{{ User.keysLenght + 1 }}">
+					<label>
+						<input ng-model="searchUser" placeholder="Buscar Usuários">
+					</label>
+				</th>
+			</tr>
+			<tr>
+			<th>Selecionar</th>
+				<th>Name</th>
+				<th>E-mail</th>
+			</tr>
+		</thead>
+			<tbody>
+				<tr data-ng-repeat="user in User.users | orderBy:predicate:reverse | filter:searchUser">
+		
+			<td>
+			<input type="checkbox" id="user-{{$index}}" ng-model="user.selecionado" />
+			<label for="user-{{$index}}"></label>
+			</td>
+
+			<td>{{ user.name }}</td>
+			<td>{{ user.email }}</td>
+
+			</tr>
+			</tbody>
+	</table>
+<!--Botão de remover clientes-->
+			<button data-ng-click="User.remove(User.users)" class="btn btn-large red waves-effect waves-light col s12" type="submit" name="action">Remover Clientes</button>
+<!--Fim -- Botão de remover clientes-->
+	</section>	
+
+	<script src="js/angular.min.js"></script>
+	<script>
+		angular.module('ctk', [])
+		.controller('UserController', UserController);
+
+			function UserController() {
+				var vm = this;
+				vm.titulo = "Cadastros";
+				vm.users = [
+					{name: 'Eduardo', email: 'eduardo@eduardo.com'},
+					{name: 'Alexandre', email: 'alexandre@alexandre.com'},
+					{name: 'Lucio', email: 'lucio@lucio.com'}
+				];
+				function getKeylength(){
+					return Object.keys(angular.copy(vm.users[0])).length;
+				}
+				vm.keysLenght = getKeylength();
+
+//Função adicionar cvlientes
+			vm.add = add;
+			function add(user) {
+				vm.users.push(angular.copy(user));
+				}
+
+				vm.removeByEmail = removeByEmail;
+			function removeByEmail(email) {
+				vm.users = vm.users.filter(function(el){
+					return el.email !== email });
+				}
+//Fim -- Função adicionar cvlientes
+
+//Função Remove clientes
+				vm.remove = remove;
+			function remove(users) {
+				vm.users = users.filter(function(el){
+					return !el.selecionado });
+				}
+//Fim -- Função Remove clientes
+			}
+	</script>
+</body>
+</html>

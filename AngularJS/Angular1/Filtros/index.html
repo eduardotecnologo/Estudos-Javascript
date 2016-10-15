@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="BEMEAN">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ titulo }}</title>
+</head>
+<body>
+	<label for="nome">Seu Nome:
+		<input type="text" data-ng-model="nome">
+	</label>
+	<!--olá, {{ nome | uppercase }}Ou lowercase, para escrever maiúsculo-->
+	<!--olá, {{ nome | lowercase }}Ou lowercase, para escrever minusculo-->
+	<!--Olá, {{ nome | reverseString }}Revertendo Caracteres-->
+	Olá, {{ nome | reverseString | uppercase }}<!--Revertendo e ainda deixando maiúsculo Caracteres-->
+	<label for="nome">Título:
+		<input type="text" data-ng-model="titulo">
+	</label>
+
+	<script src="js/angular.min.js"></script>
+	<script>
+		angular.module('BEMEAN', [])
+			.filter('reverseString', function() {
+				return function(text) {
+					if (text)
+						return text.split("").reverse().join("");
+				}
+			});
+	</script>
+</body>
+</html>

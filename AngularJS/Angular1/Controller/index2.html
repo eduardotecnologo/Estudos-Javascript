@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="ctk">
+<head>
+	<meta charset="UTF-8">
+	<title>BeMean | Controller</title>
+</head>
+<body data-ng-controller="UserController">
+<h1>Be Bean | Controller</h1>
+
+<ul>
+	<li data-ng-repeat="user in users">
+		{{ user.name }} - {{ user.email }}
+	</li>
+</ul>
+
+	<script src="js/angular.min.js"></script>
+	<script>
+		angular.module('ctk', [])
+		.controller('UserController', UserController);
+
+			function UserController($scope) {
+				$scope.titulo = "ctk";
+				$scope.users = [
+					{name: 'Eduardo', email: 'eduardo@eduardo.com'},
+					{name: 'Alexandre', email: 'alexandre@eduardo.com'},
+					{name: 'Lucio', email: 'lucio@eduardo.com'}
+				];
+			}
+			UserController['$inject'] = ['$scope'];
+	</script>
+</body>
+</html>
