@@ -1,0 +1,16 @@
+{
+  "name": "controle",
+  "version": "0.0.1",
+  "description": "Control de estoque com MEAN ",
+  "main": "index.js",
+  "scripts": {
+    "start" : "nodemon server.js"
+  },
+  "author": "Eduardo Alexandre",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.8"
+  }
+}

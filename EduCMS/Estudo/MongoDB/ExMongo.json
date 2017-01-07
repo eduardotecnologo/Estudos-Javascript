@@ -1,0 +1,4 @@
+var dados = {"nome":"Lucas", "sobreome":"Gabriel", "cpf":"444444444", "rg":"22222222", 
+	"endereco":"Rua José Teixeira da Silva", "numero":"22", "cep":"66666-666", 
+	"cidade":"Juiz de Fora", "uf":"MG", "paiz":"Brasil", "login":{"nivel":"1",
+	"email":"lucas@hotmail.com","senha":"123456"}}

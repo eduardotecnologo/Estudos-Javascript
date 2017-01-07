@@ -1,0 +1,27 @@
+{
+	"titulo":"Curso de AngularJS",
+	"curtaDescricao":"Aprenda Angular e vire um Ninja",
+	"descricao":"FrontEnd Javascript",
+	"duracao":"30 dias",
+	"modulos":"5",
+	"aulas":"",
+	"qtdAulas":"30",
+	"valor": 300,
+	"tipo": 1,
+	"formato": 1,
+	"status": 1,
+	"limitMatriculas": 0 
+}
+{
+	"curtaDescricao":"Aprenda Angular e vire um Ninja",
+	"descricao":"FrontEnd Javascript",
+	"duracao":"30 dias",
+	"modulos":"5",
+	"aulas":"",
+	"qtdAulas":"30",
+	"valor": 300,
+	"tipo": 1,
+	"formato": 1,
+	"status": 1,
+	"limitMatriculas": 0 
+}

@@ -1,0 +1,28 @@
+/*User Colection*/
+{
+	"id":,
+	"nome":,
+	"sobrenome":,
+	"cpf":,
+	"rg":,
+	"endereco":,
+	"numero":,
+	"cep":,
+	"cidade":,
+	"uf":,
+	"pais":,
+	"login":,
+	"id":{
+		"nievel":"",
+		"email":"",
+		"senha":""
+	},
+	"matricula":{
+		"cursos":[
+			{"_id":""},
+			{"tipo":""},
+			{"status":""},
+		],
+	}
+
+}

@@ -1,0 +1,23 @@
+{
+  "name": "educms",
+  "version": "1.0.0",
+  "description": "CMS",
+  "main": "./bin/www",
+  "scripts": {
+    "start": "node ./app/bin/www",
+    "nodemon": "nodemon ./app/bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "config": "^1.24.0",
+    "debug": "^2.3.3",
+    "express": "^4.14.0",
+    "method-override": "^2.3.7",
+    "mongojs": "^2.4.0",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {},
+  "author": "Eduardo Alexandre",
+  "license": "ISC"
+}
