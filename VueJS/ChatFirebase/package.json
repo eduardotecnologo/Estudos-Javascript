@@ -1,0 +1,20 @@
+{
+  "name": "chat",
+  "version": "0.0.1",
+  "description": "Chat with VueJS and Firebase RealTime",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eduardo Alexandre",
+  "license": "ISC",
+  "dependencies": {
+    "blueimp-md5": "^2.6.0",
+    "bootstrap": "^3.3.7",
+    "jquery": "^2.1.4",
+    "requirejs": "^2.3.2",
+    "vue": "^1.0.25",
+    "vue-router": "^0.7.13",
+    "vuefire": "^1.1.1"
+  }
+}
