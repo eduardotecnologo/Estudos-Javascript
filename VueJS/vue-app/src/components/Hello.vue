@@ -1,63 +1,53 @@
 <template>
   <div class="hello">
-    <div class="hello">
-  <md-toolbar>
-    <md-button class="md-icon-button">
-      <md-icon>menu</md-icon>
-    </md-button>
-    <h2 class="md-title" style="flex: 1">Default</h2>
-    <md-button class="md-icon-button">
-      <md-icon>favorite</md-icon>
-    </md-button>
-  </md-toolbar>
-  <md-tabs md-centered>
-    <md-tab md-label="Movies" md-icon="ondemand_video">
-      <div class="field-group">
-        <md-input-container>
-          <label for="movie">Movie</label>
-          <md-select name="movie" id="movie" v-model="movie">
-            <md-option value="fight_club">Fight Club</md-option>
-            <md-option value="godfather">Godfather</md-option>
-            <md-option value="godfather_ii">Godfather II</md-option>
-            <md-option value="godfather_iii">Godfather III</md-option>
-            <md-option value="godfellas">Godfellas</md-option>
-            <md-option value="pulp_fiction">Pulp Fiction</md-option>
-            <md-option value="scarface">Scarface</md-option>
-          </md-select>
-        </md-input-container>
-      </div>
-        <md-card style="width: 320px;" class="card-ripple" md-with-hover>
-          <md-card-media>
-            <md-ink-ripple></md-ink-ripple>
-            <img src="https://vuematerial.github.io/assets/card-image-1.jpg" alt="People">
-          </md-card-media>
-          <md-card-actions>
-            <md-button class="md-icon-button">
-              <md-icon>favorite</md-icon>
-            </md-button>
-            <md-button class="md-icon-button">
-              <md-icon>bookmark</md-icon>
-            </md-button>
-            <md-button class="md-icon-button">
-              <md-icon>share</md-icon>
-            </md-button>
-          </md-card-actions>
-        </md-card>
-    
-    </md-tab>
-    <md-tab md-label="Music" md-icon="music_note">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum quas amet cum vitae, omnis! Illum quas voluptatem, expedita iste, dicta ipsum ea veniam dolore in, quod saepe reiciendis nihil.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum quas amet cum vitae, omnis! Illum quas voluptatem, expedita iste, dicta ipsum ea veniam dolore in, quod saepe reiciendis nihil.</p>
-    </md-tab>
-    <md-tab md-label="Books" md-icon="books">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum quas.</p>
-    </md-tab>
-    <md-tab md-label="Pictures" md-icon="photo">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum quas.</p>
-    </md-tab>
-  </md-tabs>
-</div>
+    <h1>{{ msg }}</h1>
+    <h2>Essential Links</h2>
+    <ul>
+      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
+      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
+      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
+      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
+      <br>
+      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
+    </ul>
+    <h2>Ecosystem</h2>
+    <ul>
+      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
+      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
+      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
+    </ul>
   </div>
 </template>
 
+<script>
+export default {
+  name: 'hello',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
+  }
+}
+</script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h1, h2 {
+  font-weight: normal;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a {
+  color: #42b983;
+}
+</style>

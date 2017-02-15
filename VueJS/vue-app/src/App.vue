@@ -1,5 +1,5 @@
 <template>
-  <div id="app" v-md-theme="'default'">
+  <div id="app">
     <img src="./assets/logo.png">
     <hello></hello>
   </div>
