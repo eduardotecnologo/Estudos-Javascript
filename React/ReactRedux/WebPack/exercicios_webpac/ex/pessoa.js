@@ -7,5 +7,5 @@ export default class Pessoa{
 	}
 }
 
-const pessoa = new Pessoa('Eduardo Alexandre')
+const pessoa = new Pessoa('Eduardo')
  console.log(pessoa.toString())
