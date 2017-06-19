@@ -1,0 +1,16 @@
+{
+  "name": "exercicios_webpac",
+  "version": "1.0.0",
+  "description": "Estudos React JS",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --progress --colors --inline --hot"
+  },
+  "keywords": [],
+  "author": "Eduardo Alexandre",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^1.15.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
