@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ClassComponent from './classComponent'
+import SilvaFamily from './silvaFamily'
+
 
 ReactDOM.render(
-    <ClassComponent label='Contador' initialValue={10} />
+    <SilvaFamily />
     , document.getElementById('app'))
+
