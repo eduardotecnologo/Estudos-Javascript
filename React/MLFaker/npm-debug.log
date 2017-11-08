@@ -1,0 +1,32 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'create-react-app' ]
+2 info using npm@5.5.1
+3 info using node@v6.11.4
+4 verbose stack /usr/local/lib/node_modules/npm/node_modules/request/node_modules/http-signature/lib/signer.js:253
+4 verbose stack   /**
+4 verbose stack   ^^^
+4 verbose stack
+4 verbose stack SyntaxError: Invalid or unexpected token
+4 verbose stack     at createScript (vm.js:56:10)
+4 verbose stack     at Object.runInThisContext (vm.js:97:10)
+4 verbose stack     at Module._compile (module.js:542:28)
+4 verbose stack     at Object.Module._extensions..js (module.js:579:10)
+4 verbose stack     at Module.load (module.js:487:32)
+4 verbose stack     at tryModuleLoad (module.js:446:12)
+4 verbose stack     at Function.Module._load (module.js:438:3)
+4 verbose stack     at Module.require (module.js:497:17)
+4 verbose stack     at require (internal/module.js:20:19)
+4 verbose stack     at Object.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/node_modules/http-signature/lib/index.js:4:14)
+5 verbose cwd /Users/eduardodeveloper/Documents/GITHUBE/Estudos-Javascript/React/MLFaker
+6 error Darwin 17.0.0
+7 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "-g" "create-react-app"
+8 error node v6.11.4
+9 error npm  v5.5.1
+10 error Invalid or unexpected token
+11 error If you need help, you may report this error at:
+11 error     <https://github.com/npm/npm/issues>
+12 verbose exit [ 1, true ]
