@@ -1,18 +1,44 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+
+import HeaderHome from './HeaderHome'
+import AnuncioHome from './AnuncioHome'
+import FooterHome from './FooterHome'
+import LinkCategorias from './LinkCategorias'
+import base from './base'
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      categorias:[]
+    }
+    base.baseToState('categorias',{
+      context: this,
+      state: 'categorias'
+    })
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <HeaderHome />
+        <div className="App">
+          <div className="container">
+          <h3>Últimos Anúncios</h3>
+            <div class="row">
+              <AnuncioHome />
+              <AnuncioHome />
+              <AnuncioHome />
+            </div>
+          <h3>Categorias</h3>
+          <div class="row">
+              <LinkCategorias categoria={{ categoria: 'Bicicleta', 'icon': 'fa-lightbulb-o' }} />
+              <LinkCategorias categoria={{ categoria: 'Bicicleta', 'icon': 'fa-lightbulb-o' }} />
+              <LinkCategorias categoria={{ categoria: 'Bicicleta', 'icon': 'fa-lightbulb-o' }} />
+          </div>
+        </div>
+        <FooterHome />
+        </div>
       </div>
     );
   }
