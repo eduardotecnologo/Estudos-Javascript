@@ -1,0 +1,17 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "description": "ecommerce based node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecommerce",
+    "node.js",
+    "mongodb",
+    "ejs"
+  ],
+  "author": "Eduardo Developer",
+  "license": "ISC"
+}
