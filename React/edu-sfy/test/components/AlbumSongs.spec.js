@@ -11,7 +11,7 @@ function setup(data) {
   let props = {
     details: data.album || {},
   };
-
+  
   let renderer = ReactTestUtils.createRenderer();
   renderer.render(<AlbumSongs {...props} />);
   let output = renderer.getRenderOutput();
