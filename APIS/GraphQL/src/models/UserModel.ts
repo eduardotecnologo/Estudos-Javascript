@@ -24,6 +24,7 @@ export default (sequelize: Sequelize.Sequelize, DataTypes: Sequelize.DataTypes):
             id:{
                 type: DataTypes.INTEGER,
                 allowNull: false,
+                primaryKey: true,
                 autoIncrement: true
             },
             name: {
