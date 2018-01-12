@@ -31,4 +31,5 @@ exports.default = (sequelize, DataTypes) => {
             defaultValue: null
         }
     });
+    return User;
 };
