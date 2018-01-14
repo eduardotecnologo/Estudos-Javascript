@@ -9,18 +9,18 @@ const userTypes = `
         updatedAt: String!  
     }
     input UserCreateInput {
-        nome: String!
+        name: String!
         email: String!
         password: String!
     }
 
     input UserUpdateInput {
-        nome: String!
+        name: String!
         email: String!
         photo: String!
     }
 
-    input UserPasswordInput {
+    input UserUpdatePasswordInput {
         password: String!
     }
 `
