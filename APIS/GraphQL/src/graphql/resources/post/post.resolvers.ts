@@ -1,8 +1,9 @@
 import { GraphQLResolveInfo } from "graphql"
-import { Transaction } from "sequelize";
+import { Transaction } from "sequelize"
 
 import { DbConnection } from "../../../interfaces/DbConnectionInterface"
 import { PostInstance } from "../../../models/PostModel"
+import { handleError } from "../../../utils/utils"
 
 
 export const postResolvers = {
@@ -10,6 +11,7 @@ export const postResolvers = {
         author: (post, args, { db }: { db: DbConnection }, info: GraphQLResolveInfo) => {
             return db.User
                 .findById(post.get('author'))
+                .catch(handleError)
         },
         comment: (post, { first = 10, offset = 0 }, { db }: { db: DbConnection }, info: GraphQLResolveInfo) =>{
             return db.Comment
@@ -18,6 +20,7 @@ export const postResolvers = {
                 limit: first,
                 offset: offset
             })
+                .catch(handleError)
         }
     },
     Query: {
@@ -27,8 +30,10 @@ export const postResolvers = {
                 limit: first,
                 offset: offset
             })
+                .catch(handleError)
         },
         post: (parent, { id }, { db }: { db: DbConnection }, info: GraphQLResolveInfo) => {
+            id = parseInt(id)
             return db.Post
                 .findById(id)
                 .then((post: PostInstance) => {
@@ -43,6 +48,7 @@ export const postResolvers = {
                 return db.Post
                     .create(input, {transaction: t})
             })
+                .catch(handleError)
         },
         updatePost: (parent, { id,input }, { db }: { db: DbConnection }, info: GraphQLResolveInfo) => {
             id = parseInt(id)
@@ -54,6 +60,7 @@ export const postResolvers = {
                         return post.update(input, { transaction: t})
                     })
             })
+                .catch(handleError)
         },
         deletePost: (parent, { id }, { db }: { db: DbConnection }, info: GraphQLResolveInfo) => {
             id = parseInt(id)
@@ -66,6 +73,7 @@ export const postResolvers = {
                     .then(post => !!post)
                     })
             })
+                .catch(handleError)
         }
     }
 }
