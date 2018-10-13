@@ -1,3 +1,5 @@
+# yarn add axios //Consumir API > yarn add ws@3.3.2 --dev --exact
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
@@ -15,7 +17,12 @@ You can find the most recent version of this guide [here](https://github.com/fac
   - [npm run eject](#npm-run-eject)
 - [Supported Browsers](#supported-browsers)
 - [Supported Language Features](#supported-language-features)
-- [Syntax Highlighting in the Editor](#syntax-highlighting-in-the-editor)
+- [Syntax Highlighting in the Editor](#syntax-hig
+
+
+
+
+hlighting-in-the-editor)
 - [Displaying Lint Output in the Editor](#displaying-lint-output-in-the-editor)
 - [Debugging in the Editor](#debugging-in-the-editor)
 - [Formatting Code Automatically](#formatting-code-automatically)

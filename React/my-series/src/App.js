@@ -1,9 +1,31 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
+import api from './Api'
 
 class App extends Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      genres: [],
+      isLoading: false
+    }
+  }
   componentDidMount(){
-    
+    this.setState({ isLoading: true })
+    api.loadGenres()
+      .then((res) => {
+        this.setState({
+          isLoading: false,
+          genres: res.data
+        })
+      })
+  }
+  renderGenreLink(genre){
+    return (
+      <span>&nbsp;<a href=''>{genre}</a></span>
+    )
   }
   render() {
     return (
@@ -19,14 +41,13 @@ class App extends Component {
       <div className="collapse navbar-collapse navbar-ex1-collapse">
         <ul className="nav navbar-nav">
           <li>
-            <a href="">Menu item</a>
+            <a href="">Menu item {this.state.count}</a>
           </li>
         </ul>
       </div>
 
     </div>
   </nav>
-
 
   <section id="intro" className="intro-section">
     <div className="container">
@@ -38,6 +59,20 @@ class App extends Component {
       </div>
     </div>
   </section>
+
+  <section>
+    {
+      this.state.isLoading && 
+      <span>Aguarde, Carregando Manolo....</span>
+    }
+    {
+      !this.state.isLoading &&
+      <div>
+        Escolher Genêro:
+        {this.state.genres.map(this.renderGenreLink)}
+      </div>
+    }
+  </section>  
   </div>
     )
   }
