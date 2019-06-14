@@ -1,0 +1,23 @@
+//**Atlass Mongo
+Login eduhome
+Pass edupass
+**//
+
+Dependencias
+╭─ edudev@edudev   ~/Documents/GIT/React2019/instaClone/backend                                                                                                                                                       263  14:58:18  
+╰─ yarn add multer //Trabalha com upload de arquivos Multfordata Node 
+╭─ edudev@edudev   ~/Documents/GIT/React2019/instaClone/backend                                                                                                                                                       264  14:59:03  
+╰─ yarn add sharp //Manipula imagem dentro de uma aplicação
+╭─ edudev@edudev   ~/Documents/GIT/React2019/instaClone/backend                                                                                                                                                       265  16:19:46  
+╰─ yarn add cors //Torna a API acessível pelo front mesmo em domínios diferentes 
+╭─ edudev@edudev   ~/Documents/GIT/React2019/instaClone/backend                                                                                                                                                       266  16:20:14  
+╰─ yarn add socket.io //Seta a app para protocolo de App Realtime (WebSocket)
+
+
+///////////////FrontEnd//////////////////////
+╭─ edudev@edudev   ~/Documents/GIT/React2019/instaClone                                                                                                                                                               269  17:15:33  
+╰─ yarn create react-app frontend //Criando um Projeto React
+
+
+
+
