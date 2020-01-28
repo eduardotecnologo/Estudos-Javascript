@@ -3,6 +3,7 @@
 ▶ yarn add nodemon -D
 ▶ yarn add mongoose
 ▶ yarn add axios
+▶ yarn add cors
 /// Métodos HTTP: GET,POST, PUT,DELETE
 
 //Tipos de Parametros:
