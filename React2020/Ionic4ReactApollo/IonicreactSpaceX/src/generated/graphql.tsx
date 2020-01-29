@@ -1322,7 +1322,10 @@ export type Volume = {
   cubic_meters: Maybe<Scalars['Int']>,
 };
 
-export type LaunchesPastQueryVariables = {};
+export type LaunchesPastQueryVariables = {
+  limit: Maybe<Scalars['Int']>,
+  offset: Maybe<Scalars['Int']>
+};
 
 
 export type LaunchesPastQuery = (
@@ -1342,8 +1345,8 @@ export type LaunchesPastQuery = (
 
 
 export const LaunchesPastDocument = gql`
-    query LaunchesPast {
-  launchesPast {
+    query LaunchesPast($limit: Int, $offset: Int) {
+  launchesPast(limit: $limit, offset: $offset) {
     id
     mission_name
     launch_date_local
@@ -1361,7 +1364,7 @@ export const LaunchesPastDocument = gql`
  * __useLaunchesPastQuery__
  *
  * To run a query within a React component, call `useLaunchesPastQuery` and pass it any options that fit your needs.
- * When your component renders, `useLaunchesPastQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * When your component renders, `useLaunchesPastQuery` returns an object from Apollo Client that contains loading, error, and data properties 
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
@@ -1369,6 +1372,8 @@ export const LaunchesPastDocument = gql`
  * @example
  * const { data, loading, error } = useLaunchesPastQuery({
  *   variables: {
+ *      limit: // value for 'limit'
+ *      offset: // value for 'offset'
  *   },
  * });
  */

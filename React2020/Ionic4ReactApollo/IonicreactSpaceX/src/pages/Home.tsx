@@ -6,32 +6,19 @@ import {
   IonToolbar,
 } from '@ionic/react'
 import React from 'react'
+import Launches from '../components/Launches'
 
-import { useLaunchesPastQuery, Launch } from '../generated/graphql'
-import LaunchesItem from '../components/LaunchesItem'
-
-const Home: React.FC = () => {
-  // const { data, loading } = useQuery<LaunchesPastQuery>(LAUNCHES_PAST_QUERY)
-  const { data, loading } = useLaunchesPastQuery()
-  return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Ionic Blank</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent className="ion-padding">
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          data &&
-          data.launchesPast.map(launch => (
-            <LaunchesItem key={launch.id} launch={launch as Launch} />
-          ))
-        )}
-      </IonContent>
-    </IonPage>
-  )
-}
+const Home: React.FC = () => (
+  <IonPage>
+    <IonHeader>
+      <IonToolbar>
+        <IonTitle>Rockets SpaceX-API</IonTitle>
+      </IonToolbar>
+    </IonHeader>
+    <IonContent className="ion-padding">
+      <Launches />
+    </IonContent>
+  </IonPage>
+)
 
 export default Home
