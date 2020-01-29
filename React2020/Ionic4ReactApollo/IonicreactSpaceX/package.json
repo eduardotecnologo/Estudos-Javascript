@@ -31,7 +31,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "codegen": "graphql-codegen --config codegen.yml",
-    "codegen:watch": "npm run codegen -- --watch"
+    "codegen:watch": "npm run codegen -- --watch",
+    "deploy": "npx now --prod"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,13 +49,15 @@
       "last 1 safari version"
     ]
   },
-  "description": "An Ionic project",
+  "description": "edu-space-app",
   "devDependencies": {
     "@graphql-codegen/add": "1.8.2",
     "@graphql-codegen/cli": "1.8.2",
     "@graphql-codegen/typescript": "1.8.2",
     "@graphql-codegen/typescript-operations": "1.8.2",
     "@graphql-codegen/typescript-react-apollo": "1.8.2",
-    "@ionic/lab": "2.0.19"
+    "@ionic/lab": "2.0.19",
+    "node-sass": "^4.13.0",
+    "now": "^16.7.3"
   }
 }
