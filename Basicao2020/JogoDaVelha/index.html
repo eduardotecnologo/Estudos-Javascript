@@ -9,8 +9,45 @@
   <body>
     <h1>Jogo da Velha</h1>
     <div id="buttons-container">
-      <div id="2-players">2 Jogadores</div>
-      <div id="ai-player">Contra BOT</div>
+      <button id="2-players">2 Jogadores</button>
+      <button id="ai-player">Contra máquina</button>
+    </div>
+
+    <!-- Manipulando elementos da grade-->
+    <div id="container" class="hide">
+      <div class="box" id="block-01"></div>
+      <div class="box" id="block-02"></div>
+      <div class="box" id="block-03"></div>
+      <div class="box" id="block-04"></div>
+      <div class="box" id="block-05"></div>
+      <div class="box" id="block-06"></div>
+      <div class="box" id="block-07"></div>
+      <div class="box" id="block-08"></div>
+      <div class="box" id="block-09"></div>
+
+      <!-- Placar  -->
+      <div id="scoreboard-container">
+        <h2>Placar:</h2>
+        <span class="score-box">
+          <span id="x-scoreboard">X</span>:
+          <span id="scoreboard-1">0</span>
+        </span>
+        <span class="score-box">
+          <span id="o-scoreboard"></span>:
+          <span id="scoreboard-2">0</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Elementos de X e O -->
+    <div class="hide">
+      <div class="x">X</div>
+      <div class="o"></div>
+    </div>
+
+    <!-- Mensagem do vencedor -->
+    <div id="message" class="hide">
+      <p>Parabéns Manolo!!!</p>
     </div>
 
     <script src="js/scripts.js"></script>
