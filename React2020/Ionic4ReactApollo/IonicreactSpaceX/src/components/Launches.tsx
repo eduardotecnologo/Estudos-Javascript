@@ -4,7 +4,7 @@ import LaunchesItem from './LaunchesItem'
 import { IonButton } from '@ionic/react'
 
 const Launches: React.FC = () => {
-  const { data, loading } = useLaunchesPastQuery({
+  const { data, loading, fetchMore } = useLaunchesPastQuery({
     variables: { limit: 12, offset: 0 },
   })
   const [offset, setOffset] = useState(0)
@@ -17,7 +17,24 @@ const Launches: React.FC = () => {
 
   useEffect(() => {
     console.log('Offset changed!!!', offset)
-  }, [offset])
+    fetchMore({
+      variables: {
+        offset,
+      },
+      updateQuery(previous, { fetchMoreResult }) {
+        if (!fetchMoreResult) {
+          return previous
+        }
+        return {
+          ...previous,
+          launchesPast: [
+            ...previous.launchesPast,
+            ...fetchMoreResult.launchesPast,
+          ],
+        }
+      },
+    })
+  }, [fetchMore, offset])
 
   return (
     <React.Fragment>
