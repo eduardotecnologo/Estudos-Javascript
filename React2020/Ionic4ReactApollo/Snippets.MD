@@ -18,3 +18,8 @@ tabWidth: 2,
 ##https://graphql-code-generator.com/docs/getting-started/
 ▶ yarn add -D @graphql-codegen/cli
 ▶ npx graphql-codegen init
+##Setup https://zeit.co/
+▶ npm i -D now@16.4.4
+▶ npm i now@latest
+▶ npx now login
+▶ npx now secrets add react-app-api-url "https://api.spacex.land/graphql/"
