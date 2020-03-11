@@ -76,9 +76,9 @@ h1 {
 }
 
 /* Esconder elementos */
-/* .hide {
+.hide {
   display: none !important;
-} */
+}
 
 /* Placar */
 #scoreboard-container {
@@ -121,5 +121,5 @@ h1 {
   background-color: rgb(106, 103, 103);
   color: #fff;
   padding: 20px;
-  display: none;
+  /* display: none; */
 }
