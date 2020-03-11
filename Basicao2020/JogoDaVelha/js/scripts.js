@@ -13,7 +13,7 @@ let player2 = 0;
 // Adiconando o evento de click nos boxes
 for (let i = 0; i < boxes.length; i++) {
   //Qdo alguém  clica na caixa
-  boxes[i].addEventListener('click', function() {
+  boxes[i].addEventListener('click', function () {
     let el = checkEl(player1, player2);
 
     // Verifica se já tem X ou O
@@ -24,14 +24,35 @@ for (let i = 0; i < boxes.length; i++) {
       // Computando a jogada
       if (player1 == player2) {
         player1++;
+        if (secondPlayer == 'ai-player') {
+          // Função para executar a jogada
+          computerPlay();
+          player2++;
+        }
       } else {
         player2++;
       }
+      //Vefifica quem venceu
+      checkWinCondition();
     }
-    //Vefifica quem venceu
-    checkWinCondition();
   });
 }
+// Eventos para setar 2 player ou contra máquina
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', function () {
+    secondPlayer = this.getAttribute('id');
+
+    for (let j = 0; j < buttons.length; j++) {
+      buttons[j].style.display = 'none';
+    }
+
+    setTimeout(function () {
+      let container = document.querySelector('#container');
+      container.classList.remove('hide');
+    }, 500);
+  });
+}
+
 //Verifica o próximo jogador
 function checkEl(player1, player2) {
   if (player1 == player2) {
@@ -186,10 +207,10 @@ function checkWinCondition() {
 
     if (winner == 'x') {
       scoreboardX.textContent = parseInt(scoreboardX.textContent) + 1;
-      msg = 'O Jogador 1 venceu';
+      msg = 'Você Venceu!';
     } else if (winner == 'o') {
       scoreboardY.textContent = parseInt(scoreboardY.textContent) + 1;
-      msg = 'O Jogador 2 venceu';
+      msg = 'Opa! Você venceu.';
     } else {
       msg = 'Ops! Deu Velha.';
     }
@@ -198,17 +219,44 @@ function checkWinCondition() {
     messageContainer.classList.remove('hide');
   }
   // Esconde Mensagem
-  setTimeout(function() {
-    messageContainer.classList.add('hide');
-  }, 9000);
+  setTimeout(function () {
+    messageContainer.classList.add("hide");
+  }, 5000);
 
   //Zera as Jogadas
   player1 = 0;
   player2 = 0;
 
   //Remove x e o
-  let boxesToRemove = document.querySelectorAll('.box div');
+  let boxesToRemove = document.querySelectorAll(".box div");
   for (let i = 0; i < boxesToRemove.length; i++) {
     boxesToRemove[i].parentNode.removeChild(boxesToRemove[i]);
+  }
+}
+//Executando a lógica da jogada do PC
+function computerPlay() {
+  let cloneO = o.cloneNode(true);
+  counter = 0;
+  filled = 0;
+
+  for (let i = 0; i < boxes.length; i++) {
+    let randomNumber = Math.floor(Math.random() * 5);
+
+    //Só preenche se estiver vazio o child
+    if (boxes[i].childNodes[0] == undefined) {
+      if (randomNumber <= 1) {
+        boxes[i].appendChild(cloneO);
+        counter++;
+        break;
+      }
+
+      //Verifica qtas estão preenchidas
+    } else {
+      filled++;
+    }
+    //Função recursiva
+  }
+  if (counter == 0 && filled < 9) {
+    computerPlay();
   }
 }
