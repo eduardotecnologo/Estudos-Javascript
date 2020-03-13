@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+
+/* nav */
+.navbar {
+  padding: 1rem;
+  border-bottom: 1px solid #CCC;
+}
+
+.navbar .nav-item a {
+  color: #212529;
+}
+
+.nav-item {
+  margin: 0 10px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding: 10px 25px;
+  font-weight: bold;
+}
+
+/*Botão abrir vagas*/
+.navbar .nav-item .btn {
+  background-color: rgb(77, 126, 29);
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 0;
+}
+
+.nav-link.btn.btn-success:hover {
+  background-color: #fff;
+  color: rgb(87, 142, 32);
+  border-color: rgb(87, 142, 32);
+}
+
+/*Banner*/
+#top-container {
+  padding: 110px;
+  background-color: #f7f9fc;
+  border-bottom: 4px solid #dde0f4;
+  margin-bottom: 30px;
+  background-image: url("../img/banner.jpg");
+  background-position: 0 100px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+#main-title {
+  padding: 20px 0;
+  font-size: 3rem;
+}
+
+#main-subtitle {
+  font-size: 2rem;
+  padding: 80px;
+}
