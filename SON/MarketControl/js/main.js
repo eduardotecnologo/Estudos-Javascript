@@ -11,14 +11,32 @@ function getTotal(list) {
   }
   return total;
 }
+
 function setList(list) {
   let table = '<thead class="thead-light"><tr><td>Descrição</td><td>Quantidade</td><td>Valor</td><td>Ação</td></tr></thead><tbody>'
   for (let key in list) {
-    table += ' <tr><td>' + list[key].desc + '</td><td>' + list[key].amount + '</td><td>' + list[key].value + '</td><td>Editar | Apagar</td></tr>'
+    table += ' <tr><td>' + formatDesc(list[key].desc) + '</td><td>' + list[key].amount + '</td><td>' + formatValue(list[key].value) + '</td><td>Editar | Apagar</td></tr>'
   }
   table += '</tbody>';
   document.getElementById("listTable").innerHTML = table;
 }
+
+// Formatando a Descrição
+function formatDesc(desc) {
+  let str = desc.toLowerCase();
+  str = str.charAt(0).toUpperCase() + str.slice(1);
+  return str;
+}
+
+// Formatando número
+function formatValue(value) {
+  let str = parseFloat(value).toFixed(2) + "";
+  str = str.replace(".", ",");
+  str = "R$ " + str;
+  return str;
+}
+
+
 
 setList(list);
 console.log(getTotal(list));
