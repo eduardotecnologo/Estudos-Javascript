@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/config/config.css">
+</head>
+
+<body>
+    <div class="fixed-top">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <h5 class="text-white h4">Collapsed content</h5>
+                <span class="text-muted">Toggleable via the navbar brand.</span>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+            <div class="navbar-header">
+                <a id="navTitle" class="navbar-brand" href="index.html"></a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Tabela de listagem -->
+    <div class="container-fluid">
+        <div class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" id="desc" placeholder="Descrição do Produto">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="amount" placeholder="Quantidade de Produto">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="value" placeholder="Valor do Produto">
+            </div>
+
+            <!-- Botão de Atualizar -->
+            <span id="btnUpdate"> 
+                <span id="inputIdUpdate">
+                    
+                </span>
+
+            <button onclick="updateData();" class="btn btn-success">Salvar</button>
+            <button onclick="resetForm();" class="btn btn-secondary">Cancelar</button>
+            </span>
+
+            <button id="btnAdd" onclick="addDate()" class="btn btn-primary">Adicionar</button>
+        </div>
+        <div id="errors"></div>
+
+        <!-- Tabela -->
+        <table id="listTable" class="table table-hover">
+        </table>
+    </div>
+    <script src="./js/config/config.js"></script>
+    <script src="./js/config/main.js"></script>
+
+</body>
