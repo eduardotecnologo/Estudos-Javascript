@@ -19,7 +19,7 @@ app.use((req, res, next) =>{
 });
 
 // Conexão
-mongoose.connect('mongodb+srv://edudeveloper:3Xq4CssKpy6_z@cluster0.ntadr.mongodb.net/dbmetas?retryWrites=true&w=majority',
+mongoose.connect('',
 {
   useNewUrlParser: true,
   useUnifiedTopology: true
