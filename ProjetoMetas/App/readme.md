@@ -1,0 +1,1 @@
+### ▶ npx react-native init App

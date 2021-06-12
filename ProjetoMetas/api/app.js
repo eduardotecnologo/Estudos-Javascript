@@ -44,6 +44,12 @@ app.get('/metas', async (req, res) => {
 });
 
 app.post('/metas', async (req, res) => {
+  await sleep(3000);
+  function sleep(ms){
+    return new Promise((resolve) => {
+      setTimeout(resolve, ms);
+    });
+  }
   await Meta.create(req.body, (err) => {
     if(err) return res.status(400).json({
       error: true,
@@ -53,11 +59,11 @@ app.post('/metas', async (req, res) => {
   //console.log(req.body);
     return res.json({
       error: false,
-      mesage: "Sucesso: Cadastro realizado!"
+      message: "Sucesso: Cadastro realizado!"
 
   });
 });
 
-app.listen(3000, () => {
-  console.log('Runing Port 3000');
+app.listen(3001, () => {
+  console.log('Runing Port 3001');
 });
