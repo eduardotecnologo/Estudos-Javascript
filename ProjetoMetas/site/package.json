@@ -1,0 +1,21 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "Site para gerenciamento de metas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "Eduardo Developer",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.0.1",
+    "next": "^10.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "reactstrap": "^8.9.0"
+  }
+}
